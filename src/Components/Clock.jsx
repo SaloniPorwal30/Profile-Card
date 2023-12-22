@@ -40,14 +40,14 @@ const Clock = ({ selectedPlaceTime }) => {
   };
 
   return (
-    <div>
+    <>
       <div>
-       <span> {formatTime(currentTime).split(" ").slice(1).join(" ")}</span>
+        <span> {formatTime(currentTime).split(" ").slice(1).join(" ")}</span>
         <button onClick={handlePauseResume}>
           {isPaused ? "Pause" : "Start"}
         </button>
       </div>
-    </div>
+    </>
   );
 };
 

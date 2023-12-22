@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 const ProfileSection = () => {
   const [user, setUser] = useState([]);
   const params = useParams();
-  // console.log("Params", params);
   const fetchInfo = async () => {
     try {
       const { data: userList } = await axios.get(
@@ -23,9 +22,7 @@ const ProfileSection = () => {
       const currentUser = userWithPost.find(
         (user) => user.id === Number(params.id)
       );
-      // console.log("Current", currentUser);
       setUser(currentUser);
-      // console.log(userWithPost);
     } catch (err) {
       console.log(err);
     }
@@ -44,7 +41,7 @@ const ProfileSection = () => {
           </div>
           <div className="profileDetail">
             <h4>
-              Username: {user?.username} | Catch phrase:
+              Username: {user?.username} | Catch phrase:{" "}
               {user?.company?.catchPhrase}
             </h4>
           </div>
